@@ -391,7 +391,7 @@ body {
 }
 
 .palette-image {
-    width: 100%;
+    width: 70%;
     max-width: 500px;
     height: auto;
     object-fit: contain;
@@ -1234,46 +1234,224 @@ a,
     }
 }
 
+.gender-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
 
-/* ========== УМЕНЬШЕНИЕ ШРИФТА ТАЙМЕРА НА МОБИЛЬНЫХ ========== */
-@media screen and (max-width: 480px) {
-    .countdown-timer {
-        gap: 5px;
+.gender-item {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.gender-icon {
+    width: 200px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.gender-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: #5c151b;
+    letter-spacing: 0.05rem;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 479px) {
+    .gender-icon {
+        width: 160px;
+    }
+    .gender-label {
+        font-size: 1.2rem;
+    }
+    .gender-images {
+        gap: 25px;
+    }
+}
+
+/* ===== ИСПРАВЛЕНИЯ ДЛЯ ТАЙМЕРА ===== */
+
+/* Убираем фиксированную ширину и делаем таймер полностью адаптивным */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: auto;
+    padding: 0 5px;
+}
+
+.countdown-number {
+    font-size: 2.5rem;
+    white-space: nowrap;
+}
+
+.countdown-label {
+    font-size: 0.7rem;
+    white-space: nowrap;
+}
+
+.countdown-separator {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+/* Для экранов до 600px */
+@media screen and (max-width: 600px) {
+    .countdown-number {
+        font-size: 2rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.65rem;
+    }
+    
+    .countdown-separator {
+        font-size: 1.8rem;
+        margin: 0 1px;
     }
     
     .countdown-item {
-        min-width: 50px;
+        padding: 0 3px;
+    }
+}
+
+/* Для экранов до 480px */
+@media screen and (max-width: 480px) {
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.55rem;
+    }
+    
+    .countdown-separator {
+        font-size: 1.4rem;
+    }
+    
+    .countdown-item {
+        padding: 0 2px;
+    }
+}
+
+/* Для экранов до 400px - убираем разделители и переносим */
+@media screen and (max-width: 400px) {
+    .countdown-timer {
+        gap: 8px;
+    }
+    
+    .countdown-separator {
+        display: none;
     }
     
     .countdown-number {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     
     .countdown-label {
         font-size: 0.6rem;
     }
     
-    .countdown-separator {
-        font-size: 1.2rem;
-        margin: 0 2px;
+    .countdown-item {
+        min-width: 70px;
     }
 }
 
-/* Для очень узких экранов (iPhone SE, старые Android) */
-@media screen and (max-width: 360px) {
+/* Для экранов до 340px */
+@media screen and (max-width: 340px) {
     .countdown-item {
-        min-width: 40px;
+        min-width: 60px;
     }
     
     .countdown-number {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
-    
-    .countdown-label {
-        font-size: 0.5rem;
-    }
-    
-    .countdown-separator {
-        font-size: 1rem;
-    }
+}
+
+.lifetime-promise {
+    background: #f0e9df;  /* новый фон */
+    padding: 5rem 1.5rem;
+    text-align: center;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.promise-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.promise-icon {
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    letter-spacing: 1rem;
+    color: #b89a7a;
+}
+
+.promise-icon .heart {
+    font-size: 2rem;
+    color: #c7a17a;
+    margin: 0 0.3rem;
+}
+
+.promise-title {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    font-weight: 400;
+    color: #4a3b2c;
+    border-top: 1px solid #d6cbbc;
+    border-bottom: 1px solid #d6cbbc;
+    display: inline-block;
+    padding: 0.8rem 1rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.promise-lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #5e4b38;
+    font-family: inherit;
+    margin-bottom: 2rem;
+}
+
+.promise-quote {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #b48c5c;
+    border-left: 3px solid #dac29c;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    max-width: 600px;
+    background: #f7f0e4;  /* чуть светлее основного фона для объёма */
+    font-family: inherit;
+}
+
+.promise-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a3b2c;
+    margin-top: 1.5rem;
+}
+
+/* Адаптивность */
+@media (max-width: 700px) {
+    .promise-title { font-size: 1.5rem; letter-spacing: 2px; }
+    .promise-quote { font-size: 1.2rem; }
+    .promise-icon { font-size: 1.6rem; letter-spacing: 0.5rem; }
+    .promise-lead br, .promise-text br { display: none; }
 }
